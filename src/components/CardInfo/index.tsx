@@ -1,35 +1,42 @@
 import { CardInfoContainer, 
 CardInfoContent,
-CardInfoContentInformations,
-CardInfoContentInformationsName,
-CardInfoContentInformationsDescription,
-CardInfoContentInformationsLast
+ProfileDetails
 } from "./styles";
-import Img from '../../assets/Logo.svg'
-import GitHub from '../../assets/Git.svg'
-import Building from '../../assets/Building.svg'
-import Users from '../../assets/Users.svg'
+import Img from '../../assets/Teste.svg'
+import { GithubLogo, Buildings, Users, ArrowSquareOut} from "phosphor-react";
 
 export default function CardInfo() {
     return (
         <CardInfoContainer>
             <CardInfoContent>
                 <img src={Img} alt="" />
-                <CardInfoContentInformations>
-                    <CardInfoContentInformationsName>
-                        <span>Álex Bruno Neri Humberto</span>
-                        <p>Github</p>
-                    </CardInfoContentInformationsName>
-                    <CardInfoContentInformationsDescription>
-                        <p>Desenvolvedor Full Stack</p>
-                    </CardInfoContentInformationsDescription>
-                    <CardInfoContentInformationsLast>
-                        <span><img src={GitHub} alt=""/>alexbruno10</span>
-                        <span><img src={Building} alt=""/>Sicoob Credivar</span>
-                        <span><img src={Users} alt=""/>10 seguidores</span>
-                    </CardInfoContentInformationsLast>
-                </CardInfoContentInformations>    
+                <ProfileDetails>
+                    <header>
+                    <h1>Alex Bruno Neri Humberto</h1>
+
+                    <a href="https://github.com/alexbruno10" target="_blank">GITHUB 
+                    <ArrowSquareOut size={12} weight="fill"/>
+                    </a>
+                    </header>
+                    <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
+                    <ul>
+                        <li>
+                            <GithubLogo size={32} weight="fill"/>
+                            alexbruno10
+                        </li>
+                        <li>
+                            <Buildings size={32} weight="fill"/>
+                            Sicoob
+                        </li>
+                        <li>
+                            <Users size={32} weight="fill"/>
+                            10 seguidores
+                        </li>
+                    </ul>
+                </ProfileDetails> 
             </CardInfoContent>
         </CardInfoContainer>
+
+
     )
 };

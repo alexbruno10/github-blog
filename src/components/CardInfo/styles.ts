@@ -28,50 +28,59 @@ export const CardInfoContent = styled.div`
     }
 `
 
-export const CardInfoContentInformations = styled.div`
-    width: 38.31rem;
-    height: 8.56rem;
+export const ProfileDetails = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: ${({theme}) => theme.colors["subtitle"]};
 
-
-`
-
-export const CardInfoContentInformationsName = styled.div`
+  header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
 
-    span {
+    h1 {
+      color: ${({theme}) => theme.colors["title"]};
+      line-height: 130%;
+    }
+
+    a {
+        font-family: 'Nunito';
         font-style: normal;
         font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 130%;
-    
-        color: ${({theme}) => theme.colors["title"]};
+        font-size: 12px;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: ${({theme}) => theme.colors["blue"]};
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-right: 2rem;
+        text-decoration: none;
+        
+        svg {
+            margin-left: 0.3rem;
+        }
     }
-`
+  }
 
-export const CardInfoContentInformationsDescription = styled.div`
-    width: 100%;
-    height: 3.25rem;
-    font-size: 1rem;
-    font-style: normal;
-    margin-top: 0.5rem;
-    color: ${({theme}) => theme.colors["text"]};
-
-`
-
-export const CardInfoContentInformationsLast = styled.div`
+  ul {
     display: flex;
+    align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: auto;
 
-    span {
-        font-style: normal;
-        font-size: 1rem;
-        line-height: 130%;
-        color: ${({theme}) => theme.colors["text"]};
-    }
-
-    svg {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      svg {
         width: 1.125rem;
         height: 1.125rem;
+        color: ${({theme}) => theme.colors["label"]};
+      }
     }
-`
+  }
+`;
