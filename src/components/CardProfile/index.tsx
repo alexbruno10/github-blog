@@ -5,7 +5,7 @@ ProfileDetails
 import Img from '../../assets/Teste.svg'
 import { GithubLogo, Buildings, Users, ArrowSquareOut} from "phosphor-react";
 
-export default function CardInfo() {
+export default function CardProfile() {
     return (
         <CardInfoContainer>
             <CardInfoContent>
