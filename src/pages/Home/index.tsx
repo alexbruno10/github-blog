@@ -1,11 +1,13 @@
 import Header from "../../components/Header"
 import CardProfile from "../../components/CardProfile"
 import { HomeContainer } from "./styles"
+import SearchInput from "../../components/SearchInput"
 
 export default function Home() {
     return (
         <HomeContainer>
-            <CardProfile />
+            <CardProfile /> 
+            <SearchInput />
         </HomeContainer>
     )
 };
