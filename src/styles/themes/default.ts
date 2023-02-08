@@ -13,7 +13,9 @@ export const defaultTheme = {
     'border': '#1C2F41',
     'post': '#112131',
     'profile': '#0B1B2B',
-    'input': '#040F1A'
+    'input': '#040F1A',
+    'button': '#E6E5E5',
+    'purple': '#8047F8'
 
     }
 

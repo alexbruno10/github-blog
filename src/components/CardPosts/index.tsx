@@ -1,8 +1,12 @@
+import * as React from "react";
+import { Link } from "react-router-dom";
 import { CardPostContainer } from "./styles";
+
 
 export default function CardPosts() {
     return( 
         <CardPostContainer>
+            <Link to={'/post/1'}>
             <header>
                 <h2>Titulo para iniciantes</h2>
                 <span>há 1 dia</span>
@@ -15,6 +19,7 @@ export default function CardPosts() {
             let foo = 42; // foo is now a number
             foo = 'bar'; // foo is now a string
             foo = true; // foo is now a boolean</p>
+            </Link>
         </CardPostContainer>
     )
 };

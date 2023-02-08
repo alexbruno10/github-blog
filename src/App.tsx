@@ -11,7 +11,6 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
-
         <GlobalStyle />
         <Router />
       </ThemeProvider>

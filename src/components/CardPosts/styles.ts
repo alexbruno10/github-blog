@@ -38,5 +38,10 @@ export const CardPostContainer = styled.div`
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 4;
     }
+
+    &:hover {
+        border: 2px solid ${({theme}) => theme.colors["span"]};
+        cursor: pointer;
+    }
     
 `
