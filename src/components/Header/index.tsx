@@ -1,10 +1,13 @@
 import { HeaderContainer } from "./styles";
 import Logo from '../../assets/Logo.svg'
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
         <HeaderContainer>
-         <img src={Logo} alt="" />
+            <Link to={'/'}>
+                <img src={Logo} alt="" />  
+            </Link>
         </HeaderContainer>
     )
 };

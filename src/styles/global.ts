@@ -6,10 +6,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  :focus {
+  input:focus {
     outline: none;
     box-shadow: 0 0 0 2px ${(props) => props.theme.colors['blue']};
   } 
+  
   body {
     background: ${(props) => props.theme.colors['background']};
     -webkit-font-smoothing: antialiased;
@@ -22,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+    border: none;
   }
   a {
     text-decoration: none;
