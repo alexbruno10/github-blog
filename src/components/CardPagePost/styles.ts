@@ -13,19 +13,18 @@ export const CardPagePostContainer = styled.div`
 
 `
 
-
-
 export const CardPagePostContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   color: ${({theme}) => theme.colors["subtitle"]};
+  padding: 2rem 2rem;
 
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
 
     h1 {
       color: ${({theme}) => theme.colors["title"]};
@@ -43,7 +42,7 @@ export const CardPagePostContent = styled.div`
         flex: none;
         order: 1;
         flex-grow: 0;
-        margin-right: 2rem;
+        /* margin-right: 1rem; */
         text-decoration: none;
         
         svg {
@@ -71,3 +70,11 @@ export const CardPagePostContent = styled.div`
     }
   }
 `;
+
+export const DescriptionPageContent = styled.div`
+
+    width: 100%;
+    padding: 2.5rem 2rem;
+    color: ${({theme}) => theme.colors["text"]};
+
+`

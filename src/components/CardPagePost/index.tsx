@@ -1,15 +1,18 @@
-import { CardInfoContainer } from "../CardProfile/styles";
-import { CardPagePostContent } from "./styles";
+import { CardPagePostContent, CardPagePostContainer, DescriptionPageContent } from "./styles";
 import { GithubLogo, Buildings, Users, ArrowSquareOut, ArrowLineLeft} from "phosphor-react";
+import { Link } from "react-router-dom";
 
-export default function CardPagePost() {
+export default function PagePost() {
     return (
         <>
-        <CardInfoContainer>
+        <CardPagePostContainer>
             <CardPagePostContent>
                     <header>
-                    <a href="https://github.com/alexbruno10" target="_blank">
+
+                    <a>
+                    <Link to={"/"}>
                     <ArrowLineLeft size={12} weight="fill"/>VOLTAR
+                    </Link>
                     </a>
 
                     <a href="https://github.com/alexbruno10" target="_blank">VER NO GITHUB 
@@ -32,7 +35,17 @@ export default function CardPagePost() {
                         </li>
                     </ul>
             </CardPagePostContent>
-        </CardInfoContainer>
+
+        </CardPagePostContainer>
+
+        <DescriptionPageContent>
+
+            <p>Public</p>
+
+        </DescriptionPageContent>
+
+        
+
         </>
     )
 };
