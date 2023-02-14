@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { IPost } from "../Posts";
+import { IPost } from "../../index";
 import { CardPostContainer } from "./styles";
-import { format, formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns'
 import ptBR from "date-fns/esm/locale/pt-BR/index.js";
 
 interface PostProps {
@@ -20,6 +20,7 @@ export default function CardPosts({ posts }: PostProps) {
     return( 
         <CardPostContainer>
             <Link to={`/post/${posts.number}`}>
+
             <header>
                 <h2>{posts.title}</h2>
                 <span>{publishedDateNow}</span>

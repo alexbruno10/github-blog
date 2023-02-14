@@ -3,13 +3,17 @@ import { SearchInputContainer } from "./styles";
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+interface CountPosts {
+    countPosts: number
+}
+
 const searchFormSchema = z.object({
     query: z.string(),
 })
 
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
-export default function SearchInput() {
+export default function SearchInput({countPosts} : CountPosts) {
 
     const {register, handleSubmit, reset} = useForm<SearchFormInputs>({
         resolver: zodResolver(searchFormSchema),
@@ -25,7 +29,7 @@ export default function SearchInput() {
 
             <header>
                 <h3>Publicações</h3>
-                <span>6 publicações</span>
+                <span>{countPosts > 0 ? `${countPosts} publicações` : `${countPosts} publicação`}</span>
             </header>
 
 

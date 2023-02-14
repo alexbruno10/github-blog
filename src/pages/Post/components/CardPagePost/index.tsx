@@ -1,8 +1,13 @@
 import { CardPagePostContent, CardPagePostContainer, DescriptionPageContent } from "./styles";
 import { GithubLogo, Buildings, Users, ArrowSquareOut, ArrowLineLeft} from "phosphor-react";
 import { Link } from "react-router-dom";
+import { IPost } from "../../../Home";
 
-export default function PagePost() {
+interface PostProps {
+    contentPost: IPost,
+  }
+
+export default function PagePost({ contentPost } : PostProps) {
     return (
         <>
         <CardPagePostContainer>
@@ -14,11 +19,13 @@ export default function PagePost() {
                     <ArrowLineLeft size={12} weight="fill"/>VOLTAR
                     </Link>
 
-                    <a href="https://github.com/alexbruno10" target="_blank">VER NO GITHUB 
+                    <Link to={`${contentPost.html_url}`} target="_blank">
+                    VER NO GITHUB 
                     <ArrowSquareOut size={12} weight="fill"/>
-                    </a>
+                    </Link>
+
                     </header>
-                    <h1>Título</h1>
+                    <h1>{contentPost.title}</h1>
                     <ul>
                         <li>
                             <GithubLogo size={32} weight="fill"/>
@@ -39,7 +46,7 @@ export default function PagePost() {
 
         <DescriptionPageContent>
 
-            <p>Public</p>
+            <p>{contentPost.body}</p>
 
         </DescriptionPageContent>
 
