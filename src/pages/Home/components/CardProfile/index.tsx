@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from "react";
-import { api } from "../../lib/axios";
+import { api } from "../../../../lib/axios";
 import { CardInfoContainer, 
 CardInfoContent,
 ProfileDetails

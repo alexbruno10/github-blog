@@ -9,11 +9,10 @@ export default function PagePost() {
             <CardPagePostContent>
                     <header>
 
-                    <a>
+                    
                     <Link to={"/"}>
                     <ArrowLineLeft size={12} weight="fill"/>VOLTAR
                     </Link>
-                    </a>
 
                     <a href="https://github.com/alexbruno10" target="_blank">VER NO GITHUB 
                     <ArrowSquareOut size={12} weight="fill"/>
