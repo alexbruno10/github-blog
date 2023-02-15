@@ -1,13 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
-import { IPost } from "../Home";
 import PagePost from "./components/CardPagePost";
 import { PostContainer } from "./styles";
+import reactMarkdown from "react-markdown";
+
+export interface IPostData {
+    title: string;
+    body: string;
+    created_at: string;
+    url: string;
+    comments: number;
+    login: string;
+  }
 
 export default function Post() {
 
-    const [postData, setPostData] = useState<IPost>({} as IPost);
+    const [postData, setPostData] = useState<IPostData>({} as IPostData);
     const [isLoading, setIsLoading] = useState(true);
 
     const { id } = useParams();
@@ -20,7 +29,18 @@ export default function Post() {
             `/repos/alexbruno10/github-blog/issues/${id}`
         );
 
-        setPostData(response.data);
+        const { title, comments, created_at, user, html_url, body } = response.data;
+
+        const newPostObj = {
+            title,
+            login: user.login,
+            comments,
+            created_at: created_at,
+            url: html_url,
+            body,
+          };
+
+        setPostData(newPostObj);
         } finally {
         setIsLoading(false);
         }

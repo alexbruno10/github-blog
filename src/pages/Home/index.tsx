@@ -23,11 +23,11 @@ export default function Home() {
     const [posts, setPosts] = useState<IPost[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const getPosts = useCallback(async() => {
+    const getPosts = useCallback(async(query: string = "") => {
           try {
             setLoading(true);
             const response = await api.get(
-              `/search/issues?q=%20repo:alexbruno10/github-blog`
+              `/search/issues?q=${query}%20repo:alexbruno10/github-blog`
             );
     
             setPosts(response.data.items);
@@ -48,7 +48,7 @@ export default function Home() {
     return (
         <HomeContainer>
             <CardProfile /> 
-            <SearchInput countPosts={countPosts} />
+            <SearchInput countPosts={countPosts} getPosts={getPosts}/>
 
             {loading ? (
                 <Spinner />
