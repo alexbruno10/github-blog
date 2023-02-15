@@ -35,6 +35,7 @@ export default function CardProfile() {
     getProfileData();
     }, []);
 
+
     return (
         <CardInfoContainer>
             <CardInfoContent>

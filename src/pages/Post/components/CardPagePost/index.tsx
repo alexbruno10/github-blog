@@ -1,5 +1,5 @@
 import { CardPagePostContent, CardPagePostContainer, DescriptionPageContent } from "./styles";
-import { GithubLogo, Buildings, Users, ArrowSquareOut, ArrowLineLeft} from "phosphor-react";
+import { GithubLogo, ArrowSquareOut, ArrowLineLeft, Calendar, Chat} from "phosphor-react";
 import { Link } from "react-router-dom";
 import { IPost } from "../../../Home";
 
@@ -7,7 +7,9 @@ interface PostProps {
     contentPost: IPost,
   }
 
+
 export default function PagePost({ contentPost } : PostProps) {
+  
     return (
         <>
         <CardPagePostContainer>
@@ -29,15 +31,15 @@ export default function PagePost({ contentPost } : PostProps) {
                     <ul>
                         <li>
                             <GithubLogo size={32} weight="fill"/>
-                            alexbruno10
+                            {contentPost.user.login}
                         </li>
                         <li>
-                            <Buildings size={32} weight="fill"/>
-                            Sicoob
+                            <Calendar size={32} weight="fill"/>
+                            {contentPost.created_at}
                         </li>
                         <li>
-                            <Users size={32} weight="fill"/>
-                            10 seguidores
+                            <Chat size={32} weight="fill"/>
+                            {contentPost.comments}
                         </li>
                     </ul>
             </CardPagePostContent>
