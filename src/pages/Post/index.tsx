@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
 import PagePost from "./components/CardPagePost";
 import { PostContainer } from "./styles";
-import reactMarkdown from "react-markdown";
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from "date-fns/esm/locale/pt-BR/index.js";
 
 export interface IPostData {
     title: string;
@@ -31,11 +32,19 @@ export default function Post() {
 
         const { title, comments, created_at, user, html_url, body } = response.data;
 
+        const publishedAt = new Date(created_at)
+
+        const publishedDateNow = formatDistanceToNow(publishedAt, {
+            locale: ptBR,
+            addSuffix: true
+        })
+      
+
         const newPostObj = {
             title,
             login: user.login,
             comments,
-            created_at: created_at,
+            created_at: publishedDateNow,
             url: html_url,
             body,
           };

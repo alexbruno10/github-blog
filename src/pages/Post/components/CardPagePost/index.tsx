@@ -5,8 +5,6 @@ import { IPostData } from "../..";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { formatDistanceToNow } from 'date-fns'
-import ptBR from "date-fns/esm/locale/pt-BR/index.js";
 
 
 interface PostProps {
@@ -16,12 +14,6 @@ interface PostProps {
 
 export default function PagePost({ contentPost } : PostProps) {
 
-    const publishedAt = new Date(contentPost.created_at)
-
-    const publishedDateNow = formatDistanceToNow(publishedAt, {
-        locale: ptBR,
-        addSuffix: true
-    })
   
     return (
         <>
@@ -48,7 +40,7 @@ export default function PagePost({ contentPost } : PostProps) {
                         </li>
                         <li>
                             <Calendar size={32} weight="fill"/>
-                            {/* {publishedDateNow} */}
+                            {contentPost.created_at}
                         </li>
                         <li>
                             <Chat size={32} weight="fill"/>
